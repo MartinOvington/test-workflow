@@ -16,4 +16,4 @@ jobs:
         run: echo "$COMMIT_MESSAGES"
       - name: conditional message
         if: ${{!contains(join(github.event.commits.*.message), '#skip')}}
-        run: echo "skip not detected"
+        run: echo "skip was not detected"
