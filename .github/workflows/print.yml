@@ -17,5 +17,5 @@ jobs:
       - name: conditional message
         env:
           COMMIT_STRING: ${{ join(toJson(github.event.commits.*.message)) }}
-        if: ${{contains(COMMIT_STRING, '#skip')}}
+        if: ${{contains($COMMIT_STRING, '#skip')}}
         run: echo "skip detected"
